@@ -4,7 +4,7 @@ type IntersectionToObj<T> = {
   
   type Exclude<A, B> = A extends B ? never : A;
   
-  type PartialByKeys<T, K = any> = IntersectionToObj<{
+  type PartialByKeys<T, K extends keyof T = any> = IntersectionToObj<{
     [key in keyof T as key extends K ? key : never]?: T[key];
   } & {
     [key in Exclude<keyof T, K>]: T[key];
