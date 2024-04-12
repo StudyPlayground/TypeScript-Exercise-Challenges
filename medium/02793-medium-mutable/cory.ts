@@ -1,1 +1,1 @@
-// 답을 적어주세요.
+export type Mutable<T extends object> = { -readonly [P in keyof T]: T[P] }
