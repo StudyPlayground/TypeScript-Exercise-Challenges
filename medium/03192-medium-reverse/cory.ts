@@ -1,1 +1,1 @@
-// 답을 적어주세요.
+export type Reverse<T extends any[]> = T extends [infer F, ...infer R] ? [...Reverse<R>, F] : [];
