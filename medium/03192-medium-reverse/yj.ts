@@ -1,0 +1,1 @@
+export type Reverse<T extends any[]> = T extends [...infer Rest , infer last] ? [last, ...Reverse<Rest>] : T
