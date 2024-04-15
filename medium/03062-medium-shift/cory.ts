@@ -1,1 +1,1 @@
-// 답을 적어주세요.
+export type Shift<T extends any[]> = T extends [any, ...infer B] ? B : [];
