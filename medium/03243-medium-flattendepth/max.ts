@@ -1,6 +1,6 @@
 // solve with solution
 
-type FlattenDepth<
+export type FlattenDepth<
   T extends any[],
   S extends number = 1,
   U extends any[] = []
