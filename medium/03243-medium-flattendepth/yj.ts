@@ -1,0 +1,9 @@
+export type FlattenDepth<T extends any[], S extends number =1, U extends any[] = []> = 
+  U['length'] extends S 
+    ? T 
+    : T extends [infer F, ...infer R]
+      ? F extends any[]
+        ?[...FlattenDepth<F, S, [...U ,"a"]>, ...FlattenDepth<R,S,U>]
+        :[F, ...FlattenDepth<R,S,U>]
+      : T;
+
