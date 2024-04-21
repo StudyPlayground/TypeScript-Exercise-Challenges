@@ -1,7 +1,7 @@
-export type Chuck<T extends any[], N extends number, Temp extends any[] = []> = Temp['length'] extends N
-  ? [Temp, ...Chuck<T, N>]
+export type Chunk<T extends any[], N extends number, Temp extends any[] = []> = Temp['length'] extends N
+  ? [Temp, ...Chunk<T, N>]
   : T extends [infer A, ...infer Rest]
-    ? Chuck<Rest, N, [...Temp, A]>
+    ? Chunk<Rest, N, [...Temp, A]>
     : Temp extends []
       ? Temp
       : [Temp]
