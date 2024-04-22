@@ -1,1 +1,2 @@
-// 답을 적어주세요.
+export type Space = ' ' | '\n' | '\t'
+export type TrimRight<S extends string> = S extends `${infer U}${Space}` ? TrimRight<U> : S;
