@@ -1,7 +1,5 @@
-export type ToUnion<T> = T extends any[] ? T[number] : T
-export type Without<T, U> = 
-  T extends [infer R, ...infer F]
-    ? R extends ToUnion<U>
-      ? Without<F, U>
-      : [R, ...Without<F, U>]
-    : T;
+export type Without<T extends any[], U> = T extends [infer A, ...infer Rest]
+  ? A extends (U extends any[] ? U[number] : U)
+    ? Without<Rest, U>
+    : [A, ...Without<Rest, U>]
+  : T;
