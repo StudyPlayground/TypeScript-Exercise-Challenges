@@ -1,1 +1,2 @@
-// 답을 적어주세요.
+type Integer<T extends number> = number extends T ? never 
+    : `${T}` extends `${string}.${string}` ? never : T
