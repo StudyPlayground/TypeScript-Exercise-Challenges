@@ -1,1 +1,5 @@
-// 답을 적어주세요.
+type Filter<T extends any[], P> = T extends [infer F, ...infer R]
+    ? F extends P
+        ? [F, ...Filter<R, P>]
+        : Filter<R, P>
+    : [];
