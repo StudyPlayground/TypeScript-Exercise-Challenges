@@ -1,0 +1,5 @@
+export type DeepMutable<T extends Record<any, any>> = T extends (...args: any) => any
+  ? T
+  : {
+    -readonly[key in keyof T]: DeepMutable<T[key]>
+  }
