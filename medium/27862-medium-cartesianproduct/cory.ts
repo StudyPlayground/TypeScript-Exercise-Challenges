@@ -1,1 +1,4 @@
-// 답을 적어주세요.
+export type CartesianProduct<T, U> = T extends infer TF
+    ? U extends infer UF ? [TF, UF] : [TF]
+    : U extends infer UF ? [UF] : []
+;
